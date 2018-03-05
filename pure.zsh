@@ -108,6 +108,9 @@ prompt_pure_preprompt_render() {
 	# Initialize the preprompt array.
 	local -a preprompt_parts
 
+	# Kubectl
+	[[ -n $ZSH_KUBECTL_PROMPT ]] && preprompt_parts+=('%F{green}${ZSH_KUBECTL_PROMPT}%f')
+
 	# Set the path.
 	preprompt_parts+=('%F{blue}%~%f')
 
